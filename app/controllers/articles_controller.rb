@@ -24,6 +24,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   def update
@@ -43,7 +46,5 @@ class ArticlesController < ApplicationController
 
     redirect_to articles_path
   end
-
-
 
 end
